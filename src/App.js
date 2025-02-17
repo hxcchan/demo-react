@@ -2,6 +2,7 @@ import smile from './assets/smile.jpg';
 import {useState} from "react";
 import './App.css';
 import ReactPlayer from "react-player/youtube";
+import BirdSounds from "./BirdSounds";
 
 function App() {
     const [text, setText] = useState("Song")
@@ -12,8 +13,9 @@ function App() {
                 e => setText(e.currentTarget.value)
             }/>
             <button type={"submit"}>Submit</button>
-            <img src={smile} height={200} alt="smile" />
-            <ReactPlayer url="https://www.youtube.com/watch?v=I3OJUwILelU" controls={true} />
+            <img  height={200} src={smile} alt="smile" />
+            <ReactPlayer url="https://www.youtube.com/watch?v=I3OJUwILelU" controls={true} playing={false} volume={0.1}/>
+            <BirdSounds />
         </div>
     );
 }
